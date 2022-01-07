@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem Vindo </title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container text-center">
+
+    <div>
+        <h1>
+           Users loans
+        </h1>
+    </div>
+    <div>
+        <h3>
+            The loan with code 1 does not exist it is created together with the acount you wont be charged for it
+        </h3>
+    </div>
+    <div>
+          <table class="table table-striped table-bordered">
+              <thead class="thead-dark">
+              <tr>
+                  <th> Loan code </th>
+                  <th>Loan amount</th>
+                  <th>Number of installments</th>
+              </tr>
+
+              </thead>
+              <tbody>
+              <tr th:each = "user: ${userdata}">
+              <td th:text = "${user.id}"> ID</td>
+              <td th:text = "${user.loan}"> loans</td>
+              <td th:text = "${user.installments}"> Installments</td>
+              </tr>
+              </tbody>
+
+          </table>
+
+    </div>
+
+
+</div>
+  <div class="container text-center">
+      <h3>
+          <a th:href="@{/detailedloan}">
+              Click here to se more information about
+              your loan
+          </a>
+      </h3>
+  </div>
+
+
+
+
+</body>
+</html>
